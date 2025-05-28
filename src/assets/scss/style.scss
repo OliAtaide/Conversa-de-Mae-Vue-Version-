@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+footer{
+    margin-top: auto;
+}
+
+.game {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.game-nav,
+.game-card {
+    box-shadow: 0px 2px 40px 0px lightgray;
+}
+
+.game-nav {
+    border-top-left-radius: 16px;
+}
+
+.progress {
+    background-color: var(--primary-light);
+
+    .progress-bar {
+        background-color: var(--primary-dark);
+        font-weight: 600;
+        font-size: 12px;
+    }
+}
+
+.game-card {
+    box-shadow: 0px 2px 4px 1px #dcd8d8;
+    border-radius: 0;
+
+    .card-title {
+        color: #333;
+    }
+
+    .btn {
+        width: fit-content;
+    }
+}
+
+.card-header {
+    border: none;
+    background-color: #ff9081;
+    min-height: 32px;
+    border-radius: 16px 16px 0 0 !important;
+}
+
+.form-check-input {
+    border-radius: 3px !important;
+    border-color: black;
+    border-width: 2px;
+    background-color: transparent;
+
+    &:checked {
+        background-color: transparent;
+        background-image: url("@/assets/imgs/square-fill.svg") !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-size: 75%;
+        border-color: black;
+    }
+}
+
+.card-text,
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.text-right,
+.text-wrong,
+button {
+    font-weight: 700 !important;
+}
+
+.btn-next {
+    color: #00758d !important;
+    //display: flex !important;
+    align-items: center;
+    gap: 0.5em;
+
+    i {
+        font-size: 24px;
+    }
+}
+
+.game-card:not(:first-child) {
+    display: none;
+}
+

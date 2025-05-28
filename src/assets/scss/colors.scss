@@ -1,0 +1,123 @@
+:root {
+    --primary-light: #cddeec;
+    --primary-main: #0088a4;
+    --primary-dark: #00758d;
+    --secondary-main: #ff9081;
+    --background: #f9f5f5;
+    --text: #333333;
+    --success-background: #f4faeb;
+    --success-main: #8bc34a;
+    --success-dark: #446922;
+    --error-background: #ffe6d4;
+    --error-main: #ff5722;
+    --error-dark: #C71E07;
+}
+
+body {
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-dark) !important;
+}
+
+.bg-primary-light {
+    background-color: var(--primary-light) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-main) !important;
+    border-color: var(--primary-main) !important;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-main) !important;
+    border-color: var(--secondary-main) !important;
+}
+
+.border-secondary {
+    border-color: var(--secondary-main) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-main) !important;
+}
+
+.border-primary {
+    border-color: var(--primary-main) !important;
+}
+
+footer {
+    background-color: var(--primary-dark) !important;
+    color: white !important;
+    gap: 48px !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+
+    .container {
+        gap: 32px;
+    }
+
+    hr {
+        border-color: var(--secondary-main) !important;
+        border-width: 2px !important;
+        opacity: 1 !important;
+    }
+}
+
+.breadcrumb-item a {
+    text-decoration: none !important;
+    color: var(--secondary-main);
+}
+
+.navbar {
+    color: white !important;
+
+    .navbar-brand {
+        color: white !important;
+    }
+
+    span {
+        margin-right: 16px;
+    }
+
+    .navbar-nav {
+        gap: 8px !important;
+    }
+
+    .nav-link {
+        color: white !important;
+        background-color: var(--primary-main) !important;
+        border-radius: 4px !important;
+        padding: 8px 16px !important;
+
+        &:hover,
+        &.active {
+            background-color: white !important;
+            color: var(--primary-dark) !important;
+        }
+    }
+}
+
+.form-check-wrong {
+    background-color: var(--error-background);
+    border: 1px solid var(--error-main);
+}
+
+.form-check-right {
+    background-color: var(--success-background);
+    border: 1px solid var(--success-main);
+}
+
+.form-check-response {
+    background-color: #c3d5c3;
+}
+
+.text-right {
+    color: var(--success-dark);
+}
+
+.text-wrong {
+    color: var(--error-dark);
+}

@@ -1,30 +1,18 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <HeaderMenu />
+  <router-view />
+  <FooterMenu />
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "./assets/scss/style.scss";
+@import "./assets/scss/colors.scss";
 </style>
+
+<script setup>
+import HeaderMenu from "@/components/HeaderMenu.vue";
+import FooterMenu from "@/components/FooterMenu.vue";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+</script>
