@@ -1,7 +1,7 @@
 <template>
   <div class="card h-100 game-card">
     <div class="card-body">
-      <img src="@/assets/imgs/quiz.svg" class="w-50 mx-auto" alt="" />
+      <img :src="require(`@/assets/imgs/quiz${type}.png`)" class="w-50 mx-auto" alt="" />
       <h6 class="card-title fw-bold">
         {{ title }}
       </h6>
@@ -22,4 +22,5 @@ const props = defineProps({
 import { computed } from "vue";
 const title = computed(() => props.game.title);
 const id = computed(() => props.game.id);
+const type = computed(() => props.game.type);
 </script>

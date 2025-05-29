@@ -1,11 +1,34 @@
 <template>
   <div class="game container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <router-link to="/"> Início </router-link>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <router-link to="/"> Jogos </router-link>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          {{ title }}
+        </li>
+      </ol>
+    </nav>
     <div class="game-body mb-3">
       <div class="card game-card">
         <div class="card-body">
           <h3 class="game-title text-secondary fw-bold">
             {{ title }}
           </h3>
+          <div class="video" v-if="video">
+            <iframe
+              :src="`https://www.youtube.com/embed/${video}`"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -139,7 +162,7 @@ const game = store.getters.getGameById(route.params.id);
 
 const go = parseInt(route.params.id) + 1;
 
-const { title, list } = game;
+const { title, list, video } = game;
 
 const hit = ref(0);
 const miss = ref(0);

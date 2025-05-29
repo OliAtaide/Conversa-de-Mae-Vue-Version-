@@ -7,6 +7,8 @@ export default createStore({
         id: "1",
         title:
           "Teste seus Conhecimentos - Modificações físicas e emocionais da gravidez",
+        type: 1,
+        video: "Ribe9QtpHck",
         list: [
           {
             title:
@@ -98,6 +100,8 @@ export default createStore({
       {
         id: "2",
         title: "Teste seus Conhecimentos - ISTs, Prevenção e Sífilis",
+        video: "w76N2H9PFuU",
+        type: 1,
         list: [
           {
             title: "O que são Infecções Sexualmente Transmissíveis (ISTs)?",
@@ -193,6 +197,8 @@ export default createStore({
         id: "3",
         title:
           "Teste seus Conhecimentos - Bem-estar: alimentação, atividade física e vacinação",
+        type: 1,
+        video: "zsqVSl07TsI",
         list: [
           {
             title:
@@ -286,6 +292,8 @@ export default createStore({
         id: "4",
         title:
           "Teste seus Conhecimentos - Exames do Pré-Natal e Sífilis Congênita",
+        type: 1,
+        video: "fERueh3cVJM",
         list: [
           {
             title:
@@ -383,6 +391,8 @@ export default createStore({
         id: "5",
         title:
           "Teste seus Conhecimentos - Participação do Parceiro no Pré-Natal, Tratamento da Sífilis e Acompanhamento",
+        type: 1,
+        video: "J_vul1ohHG8",
         list: [
           {
             title:
@@ -474,6 +484,8 @@ export default createStore({
         id: "6",
         title:
           "Teste seus Conhecimentos - Amamentação, Trabalho de Parto e Parto",
+        type: 1,
+        video: "U3ZB_TZtR5I",
         list: [
           {
             title:
@@ -559,6 +571,7 @@ export default createStore({
       {
         id: "7",
         title: "Teste seus Conhecimentos - Jogo Imagem Palavra",
+        type: 2,
         list: [
           {
             title: "Qual palavra abaixo corresponde a essa imagem?",
@@ -609,6 +622,7 @@ export default createStore({
       {
         id: "8",
         title: "Teste seus Conhecimentos - Verdadeiro ou Falso",
+        type: 3,
         list: [
           {
             title:
