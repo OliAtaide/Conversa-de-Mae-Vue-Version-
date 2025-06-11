@@ -5,10 +5,10 @@
     --secondary-main: #ff9081;
     --background: #f9f5f5;
     --text: #333333;
-    --success-background: #f4faeb;
+    --success-light: #f4faeb;
     --success-main: #8bc34a;
     --success-dark: #446922;
-    --error-background: #ffe6d4;
+    --error-light: #ffe6d4;
     --error-main: #ff5722;
     --error-dark: #c71e07;
 }
@@ -26,26 +26,42 @@ body {
     background-color: var(--primary-light) !important;
 }
 
+.bg-success-light {
+    background-color: var(--success-light) !important;
+}
+
+.bg-error-light {
+    background-color: var(--error-light) !important;
+}
+
 .btn-primary {
     background-color: var(--primary-main) !important;
-    border-color: var(--primary-main) !important;
+    border: 1px solid var(--primary-main) !important;
 }
 
 .btn-secondary {
     background-color: var(--secondary-main) !important;
-    border-color: var(--secondary-main) !important;
+    border: 1px solid var(--secondary-main) !important;
 }
 
 .border-secondary {
-    border-color: var(--secondary-main) !important;
+    border: 1px solid var(--secondary-main) !important;
+}
+
+.border-primary {
+    border: 1px solid var(--primary-main) !important;
+}
+
+.border-success {
+    border: 1px solid var(--success-dark) !important;
+}
+
+.border-error {
+    border: 1px solid var(--error-dark) !important;
 }
 
 .text-secondary {
     color: var(--secondary-main) !important;
-}
-
-.border-primary {
-    border-color: var(--primary-main) !important;
 }
 
 footer {
@@ -60,7 +76,7 @@ footer {
     }
 
     hr {
-        border-color: var(--secondary-main) !important;
+        border: 1px solid var(--secondary-main) !important;
         border-width: 2px !important;
         opacity: 1 !important;
     }
@@ -101,12 +117,12 @@ footer {
 }
 
 .form-check-wrong {
-    background-color: var(--error-background);
+    background-color: var(--error-light);
     border: 1px solid var(--error-main);
 }
 
 .form-check-right {
-    background-color: var(--success-background);
+    background-color: var(--success-light);
     border: 1px solid var(--success-main);
 }
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="card h-100 game-card">
-    <div class="card-body">
+  <div class="card h-100 game-card" :class="$store.state.concluidos[index] ? 'bg-success-light border-success' : ''">
+    <div class="card-body" >
       <img :src="require(`@/assets/imgs/quiz${type}.png`)" class="w-50 mx-auto" alt="" />
       <span v-if="$store.state.concluidos[index]" class="badge badge-success rounded-pill">
         Concluído
