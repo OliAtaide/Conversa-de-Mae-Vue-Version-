@@ -10,7 +10,7 @@
     --success-dark: #446922;
     --error-background: #ffe6d4;
     --error-main: #ff5722;
-    --error-dark: #C71E07;
+    --error-dark: #c71e07;
 }
 
 body {
@@ -120,4 +120,20 @@ footer {
 
 .text-wrong {
     color: var(--error-dark);
+}
+
+.badge {
+    font-size: 16px;
+    font-weight: 400;
+    width: fit-content;
+}
+
+.badge-gray {
+    border: 1px solid #666666 !important;
+    color: #666666 !important;
+}
+
+.badge-success {
+    border: 1px solid var(--success-dark) !important;
+    color: var(--success-dark) !important;
 }

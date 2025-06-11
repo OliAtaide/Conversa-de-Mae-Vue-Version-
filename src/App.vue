@@ -15,4 +15,12 @@
 import HeaderMenu from "@/components/HeaderMenu.vue";
 import FooterMenu from "@/components/FooterMenu.vue";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { onBeforeMount } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+onBeforeMount(async () => {
+  store.commit('initialiseVars')
+})
 </script>

@@ -669,6 +669,7 @@ export default createStore({
         ],
       },
     ],
+    concluidos: [false, false, false, false, false, false, false, false],
   },
   getters: {
     getGames: (state) => {
@@ -681,7 +682,23 @@ export default createStore({
       return state.games.find((game) => game.title === title);
     },
   },
-  mutations: {},
+  mutations: {
+    setGames(state, games) {
+      state.games = games;
+    },
+    setConcluidos(state, concluidos) {
+      state.concluidos = concluidos;
+    },
+    setGameConcluido(state, index) {
+      state.concluidos[index] = true;
+      localStorage.setItem("concluidos", JSON.stringify(state.concluidos));
+    },
+    initialiseVars(state) {
+      if (localStorage.getItem("concluidos")) {
+        state.concluidos = JSON.parse(localStorage.concluidos);
+      }
+    },
+  },
   actions: {},
   modules: {},
 });

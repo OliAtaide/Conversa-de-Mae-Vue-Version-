@@ -20,103 +20,55 @@
             {{ title }}
           </h3>
           <div class="video" v-if="video">
-            <iframe
-              :src="`https://www.youtube.com/embed/${video}`"
-              title="YouTube video player"
-              frameborder="0"
+            <iframe :src="`https://www.youtube.com/embed/${video}`" title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
     <div class="game-body">
-      <div
-        class="card game-card"
-        :key="currentQuestionIndex"
-        :id="`questao_${currentQuestionIndex}`"
-        v-if="!finished"
-      >
+      <div class="card game-card" :key="currentQuestionIndex" :id="`questao_${currentQuestionIndex}`" v-if="!finished">
         <div class="card-body px-4">
           <div class="progress rounded-pill">
-            <div
-              class="progress-bar rounded-pill text-end px-2 py-1"
-              role="progressbar"
-              :aria-valuenow="currentProgress"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              :style="`width: ${
-                currentProgress == 0 ? 'fit-content' : currentProgress
-              }%`"
-            >
+            <div class="progress-bar rounded-pill text-end px-2 py-1" role="progressbar"
+              :aria-valuenow="currentProgress" aria-valuemin="0" aria-valuemax="100" :style="`width: ${currentProgress == 0 ? 'fit-content' : currentProgress
+                }%`">
               {{ currentProgress }}%
             </div>
           </div>
           <h6 class="card-title p-4 bg-primary-light fw-semibold">
             {{ currentQuestion.title }}
           </h6>
-          <img
-            class="mx-5"
-            v-if="currentQuestion.image"
-            :src="require(`@/assets/imgs/${currentQuestion.image}`)"
-          />
+          <img class="mx-5" v-if="currentQuestion.image" :src="require(`@/assets/imgs/${currentQuestion.image}`)" />
           <div class="card-text">
-            <div
-              class="form-check px-4 py-3 form"
-              :class="
-                disabled && i == currentOption
-                  ? textRight
-                    ? 'form-check-right'
-                    : 'form-check-wrong'
-                  : ''
-              "
-              v-for="(item, i) in currentQuestion.options"
-              :key="i"
-            >
+            <div class="form-check px-4 py-3 form" :class="disabled && i == currentOption
+                ? textRight
+                  ? 'form-check-right'
+                  : 'form-check-wrong'
+                : ''
+              " v-for="(item, i) in currentQuestion.options" :key="i">
               <div class="d-flex gap-3 align-items-center">
-                <input
-                  class="form-check-input m-0"
-                  type="radio"
-                  :value="i"
-                  :name="`questao_${index}`"
-                  v-model="currentOption"
-                  :disabled="disabled"
-                />
+                <input class="form-check-input m-0" type="radio" :value="i" :name="`questao_${i}`"
+                  v-model="currentOption" :disabled="disabled" />
                 <label class="form-check-label" for="flexCheckDefault">
                   {{ item }}
                 </label>
               </div>
-              <div
-                class="feedback d-flex flex-column"
-                v-if="disabled && i === currentOption"
-              >
+              <div class="feedback d-flex flex-column" v-if="disabled && i === currentOption">
                 <h6 class="text-right mt-2" v-if="textRight">Correto!</h6>
                 <h6 class="text-wrong mt-2" v-if="textWrong">Errado!</h6>
                 <span v-if="currentQuestion.feedbacks">
                   {{ currentQuestion.feedbacks[currentOption] }}
                 </span>
-                <button
-                  type="button"
-                  class="btn ms-auto btn-primary"
-                  data-next=""
-                  @click="next"
-                  v-if="disabled"
-                >
+                <button type="button" class="btn ms-auto btn-primary" data-next="" @click="next" v-if="disabled">
                   Continuar
                 </button>
               </div>
             </div>
           </div>
           <div class="d-flex justify-content-end px-4">
-            <button
-              type="submit"
-              class="btn btn-send w-auto"
-              data-send=""
-              @click="send"
-              v-if="!disabled"
-            >
+            <button type="submit" class="btn btn-send w-auto" data-send="" @click="send" v-if="!disabled">
               Enviar
             </button>
           </div>
@@ -135,11 +87,7 @@
           </div>
           <div class="d-flex justify-content-end align-items-center">
             <a href="" class="btn btn-redo w-auto"> Refazer </a>
-            <a
-              v-if="store.state.games[go - 1]"
-              :href="go"
-              class="btn btn-next d-flex align-items-center w-auto"
-            >
+            <a v-if="store.state.games[go - 1]" :href="go" class="btn btn-next d-flex align-items-center w-auto">
               Próximo
               <i class="bi bi-arrow-right-short"></i>
             </a>
@@ -206,6 +154,8 @@ function next() {
     disabled.value = false;
   } else {
     finished.value = true;
+
+    store.commit("setGameConcluido", parseInt(route.params.id) - 1);
   }
 }
 </script>

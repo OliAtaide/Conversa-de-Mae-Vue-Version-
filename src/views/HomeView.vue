@@ -16,7 +16,7 @@
           v-for="(game, index) in $store.state.games"
           :key="index"
         >
-          <GameCard :game="game" />
+          <GameCard :game="game" :index="index" />
         </div>
       </div>
     </div>
